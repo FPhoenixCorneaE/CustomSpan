@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CustomSpan</string>
+    <string name="span_string1">剑外忽传收蓟北，初闻涕泪满衣裳。却看妻子愁何在，漫卷诗书喜欲狂。白日放歌须纵酒，青春作伴好还乡。即从巴峡穿巫峡，便下襄阳向洛阳。</string>
+    <string name="span_string2">风急天高猿啸哀，渚清沙白鸟飞回。无边落木萧萧下，不尽长江滚滚来。万里悲秋常作客，百年多病独登台。艰难苦恨繁霜鬓，潦倒新停浊酒杯。</string>
+    <string name="span_string3">主人有酒欢今夕，请奏鸣琴广陵客。月照城头乌半飞，霜凄万树风入衣。(万树 一作：万木)铜炉华烛烛增辉，初弹渌水后楚妃。一声已动物皆静，四座无言星欲稀。清淮奉使千余里，敢告云山从此始。</string>
+</resources>

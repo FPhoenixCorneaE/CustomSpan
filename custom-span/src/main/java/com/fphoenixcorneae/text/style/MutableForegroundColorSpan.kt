@@ -12,10 +12,9 @@ import androidx.annotation.IntRange
  * @date 2020-09-26:17:55
  */
 class MutableForegroundColorSpan(
-    @ColorInt private val mColor: Int = Color.BLACK,
-    @IntRange(from = 0, to = 255) private val mAlpha: Int = 0
-) : CharacterStyle(),
-    UpdateAppearance {
+    @ColorInt var mColor: Int = Color.RED,
+    @IntRange(from = 0, to = 255) var mAlpha: Int = 0
+) : CharacterStyle(), UpdateAppearance {
 
     override fun updateDrawState(tp: TextPaint) {
         tp.color = mColor

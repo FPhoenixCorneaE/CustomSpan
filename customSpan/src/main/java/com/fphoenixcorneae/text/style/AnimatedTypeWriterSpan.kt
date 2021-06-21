@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.graphics.Color
 import android.text.SpannableString
 import android.text.Spanned
+import android.text.format.DateUtils
 import android.util.Property
 import android.view.animation.LinearInterpolator
 import androidx.annotation.ColorInt
@@ -12,18 +13,19 @@ import androidx.annotation.FloatRange
 import java.util.*
 
 /**
- * @desc AnimatedTypeWriterSpan实现打字机效果。
+ * @desc AnimatedTypeWriterSpan 实现打字机效果。
  * @date 2020-09-27 16:50
  */
 class AnimatedTypeWriterSpan constructor(
     text: String,
     @ColorInt private val mColor: Int = Color.BLACK,
-    private val mDuration: Long = 2000,
     @FloatRange(from = 0.0, to = 1.0) private val mAlpha: Float = 0f,
-    private val onAnimationUpdate: ((SpannableString) -> Unit)?
+    private val mDuration: Long = DateUtils.SECOND_IN_MILLIS * 2,
+    private val onAnimationUpdate: ((SpannableString) -> Unit)?,
 ) {
 
     private val mSpans: ArrayList<MutableForegroundColorSpan> = ArrayList()
+    private var mAnimator: ObjectAnimator
 
     private fun addSpan(span: MutableForegroundColorSpan) {
         span.mColor = mColor
@@ -51,9 +53,9 @@ class AnimatedTypeWriterSpan constructor(
             }
         }
 
-    private val animatedTypeWriterSpanFloatProperty: Property<AnimatedTypeWriterSpan, Float> =
+    private val mAnimatedTypeWriterSpanFloatProperty: Property<AnimatedTypeWriterSpan, Float> =
         object : Property<AnimatedTypeWriterSpan, Float>(
-            Float::class.java, "animatedTypeWriterSpanFloatProperty"
+            Float::class.java, "mAnimatedTypeWriterSpanFloatProperty"
         ) {
             override operator fun set(spanAnimated: AnimatedTypeWriterSpan, value: Float) {
                 spanAnimated.alpha = value
@@ -64,8 +66,34 @@ class AnimatedTypeWriterSpan constructor(
             }
         }
 
+    fun cancelAnimation() {
+        mAnimator.cancel()
+    }
+
+    fun pauseAnimation() {
+        if (mAnimator.isRunning && mAnimator.isPaused.not()) {
+            mAnimator.pause()
+        }
+    }
+
+    fun resumeAnimation() {
+        if (mAnimator.isStarted && mAnimator.isPaused) {
+            mAnimator.resume()
+        }
+    }
+
+    fun toggleAnimation() {
+        if (mAnimator.isRunning && mAnimator.isPaused.not()) {
+            mAnimator.pause()
+        } else if (mAnimator.isStarted && mAnimator.isPaused) {
+            mAnimator.resume()
+        } else if (mAnimator.isStarted.not() && mAnimator.isRunning.not()) {
+            mAnimator.start()
+        }
+    }
+
     init {
-        // 把文字切断成多个character的span
+        // 把文字切断成多个 character 的 span
         val spannableString = SpannableString(text).apply {
             repeat(text.length) { index ->
                 with(MutableForegroundColorSpan()) {
@@ -75,9 +103,9 @@ class AnimatedTypeWriterSpan constructor(
             }
         }
 
-        // 淡入span后再淡入其它的span
-        ObjectAnimator.ofFloat(
-            this, animatedTypeWriterSpanFloatProperty, 0f, 1f
+        // 淡入 span 后再淡入其它的 span
+        mAnimator = ObjectAnimator.ofFloat(
+            this, mAnimatedTypeWriterSpanFloatProperty, 0f, 1f
         ).apply {
             setEvaluator(FloatEvaluator())
             addUpdateListener { onAnimationUpdate?.invoke(spannableString) }

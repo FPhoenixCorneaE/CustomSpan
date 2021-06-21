@@ -16,6 +16,7 @@ class RoundedBackgroundSpan(
 ) : ReplacementSpan() {
 
     private var mSize = 0
+
     override fun getSize(
         paint: Paint,
         text: CharSequence,
@@ -54,7 +55,7 @@ class RoundedBackgroundSpan(
         canvas.drawRoundRect(oval, mRadius, mRadius, paint)
         // 恢复画笔的文字颜色
         paint.color = color
-        //绘制文字
+        // 绘制文字
         canvas.drawText(text, start, end, x + mRadius, y.toFloat(), paint)
     }
 

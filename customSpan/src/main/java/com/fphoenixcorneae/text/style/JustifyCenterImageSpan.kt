@@ -7,7 +7,8 @@ import android.graphics.drawable.Drawable
 import android.text.style.ImageSpan
 
 /**
- * @desc Google提供的ImageSpan和DynamicDrawableSpan只能实现图片和文字底部对齐或者是baseline对齐，现在JustifyCenterImageSpan可以实现图片和文字居中对齐。
+ * @desc Google 提供的 ImageSpan 和 DynamicDrawableSpan 只能实现图片和文字底部对齐或者是 baseline 对齐，
+ *       现在 JustifyCenterImageSpan 可以实现图片和文字居中对齐。
  * @date 2020-09-26 17:10
  */
 class JustifyCenterImageSpan(

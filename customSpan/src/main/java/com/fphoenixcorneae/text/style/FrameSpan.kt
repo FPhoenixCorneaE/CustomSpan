@@ -8,7 +8,7 @@ import android.text.style.ReplacementSpan
 import androidx.annotation.ColorInt
 
 /**
- * @desc FrameSpan实现给相应的字符序列添加边框的效果
+ * @desc FrameSpan 实现给相应的字符序列添加边框的效果
  * @date 2020-09-26 17:01
  */
 class FrameSpan(

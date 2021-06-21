@@ -6,7 +6,7 @@ import android.text.style.CharacterStyle
 import android.text.style.UpdateAppearance
 
 /**
- * @desc 彩虹样的Span，主要是用到了Paint的Shader技术
+ * @desc 彩虹样的 Span，主要是用到了 Paint 的 Shader 技术
  * @date 2020-09-26 17:39
  */
 class RainbowSpan(

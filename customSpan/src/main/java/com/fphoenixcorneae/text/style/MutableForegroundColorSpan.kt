@@ -8,7 +8,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.IntRange
 
 /**
- * @desc 可变前景颜色Span
+ * @desc 可变前景颜色 Span
  * @date 2020-09-26:17:55
  */
 class MutableForegroundColorSpan(

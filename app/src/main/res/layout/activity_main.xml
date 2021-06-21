@@ -1,159 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1、FrameSpan实现给相应的字符序列添加边框的效果:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/mTvFrameSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:lineSpacingExtra="5dp"
-            android:text="@string/span_string1"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、FrameSpan实现给相应的字符序列添加边框的效果:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="2、RoundedBackgroundSpan可以实现自定义圆角背景Span:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvFrameSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/span_string1"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvRoundedBackgroundSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:lineSpacingExtra="5dp"
-            android:text="@string/span_string1"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2、RoundedBackgroundSpan可以实现自定义圆角背景Span:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="3、Google提供的ImageSpan和DynamicDrawableSpan只能实现图片和文字底部对齐或者是baseline对齐，现在JustifyCenterImageSpan可以实现图片和文字居中对齐。:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvRoundedBackgroundSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/span_string1"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvJustifyCenterImageSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string2"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="3、Google提供的ImageSpan和DynamicDrawableSpan只能实现图片和文字底部对齐或者是baseline对齐，现在JustifyCenterImageSpan可以实现图片和文字居中对齐。:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="4、彩虹样的Span，主要是用到了Paint的Shader技术:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvJustifyCenterImageSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string2"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvRainbowSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string3"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="4、彩虹样的Span，主要是用到了Paint的Shader技术:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="5、AnimatedRainbowSpan实现一个动画的彩虹样式,实现思路：通过ObjectAnimator动画调整RainbowSpan中矩阵的平移，从而实现动画彩虹的效果。:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvRainbowSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string3"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvAnimatedRainbowSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string3"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="5、AnimatedRainbowSpan实现一个动画的彩虹样式,实现思路：通过ObjectAnimator动画调整RainbowSpan中矩阵的平移，从而实现动画彩虹的效果。:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="6、AnimatedFireworkSpan实现“烟火”动画,让文字随机淡入。:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvAnimatedRainbowSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string3"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvAnimatedFireworkSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string4"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="6、AnimatedFireworkSpan实现“烟火”动画,让文字随机淡入。:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="7、AnimatedForegroundColorSpan实现改变文字颜色效果。:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvAnimatedFireworkSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string4"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvAnimatedForegroundColorSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string4"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="7、AnimatedForegroundColorSpan实现改变文字颜色效果。:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="8、AnimatedTypeWriterSpan实现打字机效果。:"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/mTvAnimatedForegroundColorSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string4"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/mTvAnimatedTypeWriterSpan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/span_string5"
-            android:textColor="@android:color/black"
-            android:textSize="14sp" />
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="8、AnimatedTypeWriterSpan实现打字机效果。:"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/mTvAnimatedTypeWriterSpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/span_string5"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
